@@ -16,6 +16,7 @@
 let orderPlaced = () => new Promise((resolve, reject)=>{
     setTimeout(()=>{
         console.log('Order Placed')
+        document.getElementsByClassName('status')[0].classList.replace('btn-light', 'btn-success')
         resolve();
     },1000)
 })
@@ -24,6 +25,8 @@ let orderPlaced = () => new Promise((resolve, reject)=>{
 let verifyOrder = () => new Promise((resolve, reject)=>{
     setTimeout(()=>{
         console.log('Verifying Order Details')
+        document.getElementsByClassName('status')[1].classList.replace('btn-light', 'btn-success')
+
         resolve();
     },2000)
 })
@@ -32,6 +35,8 @@ let verifyOrder = () => new Promise((resolve, reject)=>{
 let checkInventory = () => new Promise((resolve, reject)=>{
     setTimeout(()=>{
         console.log('Checking Inventory')
+        document.getElementsByClassName('status')[2].classList.replace('btn-light', 'btn-success')
+
         resolve();
     },5000)
 })
@@ -39,6 +44,8 @@ let checkInventory = () => new Promise((resolve, reject)=>{
 let progress25 =() =>  new Promise((resolve, reject)=>{
     setTimeout(()=>{
         console.log('25% of items fetched')
+        document.getElementsByClassName('status')[3].classList.replace('btn-light', 'btn-success')
+
         resolve();
     },3000)
 })
@@ -47,6 +54,8 @@ let progress25 =() =>  new Promise((resolve, reject)=>{
 let progress50 =() =>  new Promise((resolve, reject)=>{
     setTimeout(()=>{
         console.log('50% of items fetched')
+        document.getElementsByClassName('status')[4].classList.replace('btn-light', 'btn-success')
+
         resolve();
     },3000)
 })
@@ -54,6 +63,8 @@ let progress50 =() =>  new Promise((resolve, reject)=>{
 let progress75 =() =>  new Promise((resolve, reject)=>{
     setTimeout(()=>{
         console.log('75% of items fetched')
+        document.getElementsByClassName('status')[5].classList.replace('btn-light', 'btn-success')
+
         resolve();
     },3000)
 })
@@ -61,6 +72,8 @@ let progress75 =() =>  new Promise((resolve, reject)=>{
 let progress100 =() =>  new Promise((resolve, reject)=>{
     setTimeout(()=>{
         console.log('All items fetched')
+        document.getElementsByClassName('status')[6].classList.replace('btn-light', 'btn-success')
+
         resolve();
     },3000)
 })
@@ -75,9 +88,14 @@ let executeOrder = async () => {
 
     try{
         await orderPlaced();
-        await orderPlaced2();
-        await orderPlaced3();
-        await orderPlaced4();
+        await verifyOrder();
+        await checkInventory();
+        await progress25();
+        await progress50();
+        await progress75();
+        await progress100();
+        console.log('Order Packed and is ready!')
+        document.getElementsByClassName('status')[7].classList.replace('btn-light', 'btn-success')
 
     }
     catch(e)
