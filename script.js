@@ -15,30 +15,52 @@
 
 let orderPlaced = () => new Promise((resolve, reject)=>{
     setTimeout(()=>{
-        console.log('Promise 1')
+        console.log('Order Placed')
+        resolve();
+    },1000)
+})
+
+
+let verifyOrder = () => new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        console.log('Verifying Order Details')
         resolve();
     },2000)
 })
 
 
-let orderPlaced2 = () => new Promise((resolve, reject)=>{
+let checkInventory = () => new Promise((resolve, reject)=>{
     setTimeout(()=>{
-        console.log('Promise 2')
-        resolve();
-    },7000)
-})
-
-
-let orderPlaced3 = () => new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-        console.log('Promise 3')
+        console.log('Checking Inventory')
         resolve();
     },5000)
 })
 
-let orderPlaced4 =() =>  new Promise((resolve, reject)=>{
+let progress25 =() =>  new Promise((resolve, reject)=>{
     setTimeout(()=>{
-        console.log('Promise 4')
+        console.log('25% of items fetched')
+        resolve();
+    },3000)
+})
+
+
+let progress50 =() =>  new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        console.log('50% of items fetched')
+        resolve();
+    },3000)
+})
+
+let progress75 =() =>  new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        console.log('75% of items fetched')
+        resolve();
+    },3000)
+})
+
+let progress100 =() =>  new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        console.log('All items fetched')
         resolve();
     },3000)
 })
