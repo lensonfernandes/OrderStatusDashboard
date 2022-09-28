@@ -79,6 +79,13 @@ let progress100 =() =>  new Promise((resolve, reject)=>{
 })
 
 let executeOrder = async () => {
+
+    orderIdValue = document.getElementById('orderNoId').value;
+    console.log(orderIdValue)
+    document.getElementById('order-no-display').innerText = `Status for Order No. ${orderIdValue}`
+	document.getElementById('order-no-display').style.display = 'block'
+
+
     // console.log('This is Test message')
     // console.log('This is Message 2')
     //  await setTimeout(()=>{ console.log('This is Message Inside SetTime')},5000)

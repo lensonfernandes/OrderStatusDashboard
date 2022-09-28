@@ -10,10 +10,17 @@
 </head>
 <body>
     
-    <div class="container">
-        <h1 class="display-4">Order Status Dashboard</h1>
-        <button class="btn btn-primary" type="button" onclick="executeOrder()">Check Status</button>
+    <div class="container text-center ">
+        <h1 class="display-4 m-3">Order Status Dashboard</h1>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Order No" aria-label="Order No" aria-describedby="basic-addon2" id="orderNoId">
+            <div class="input-group-append">
+              <button class="btn btn-outline-primary" type="button" onclick="executeOrder()">Check Status</button>
+            </div>
+          </div>
+        <!-- <button class="btn btn-primary m-3" type="button" onclick="executeOrder()">Check Status</button> -->
          <div class="d-grid gap-2">
+            <p class="lead" style="display: none" id="order-no-display"></p>
             <button class="btn status btn-light" type="button">Order Placed</button>
             <button class="btn status btn-light" type="button">Verifying Order Details</button>
             <button class="btn  status btn-light" type="button">Checking Inventory</button>
